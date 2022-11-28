@@ -2,6 +2,7 @@ import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.List;
 public class FelineTest {
 
@@ -41,14 +42,12 @@ public class FelineTest {
 		Assert.assertEquals(expectedList, actualList);
 	}
 
-	@Test(expected = Exception.class)
-	public void eatMeatExceptionTest() throws Exception {
+	@Test
+	public void animalKindNullTest() {
 		try {
 			feline.getFood("null");
-		} catch (Exception e) {
-			String message = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
-			Assert.assertEquals(message, e.getMessage());
-			throw e;
+		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
 	}
 }
